@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_100713) do
+ActiveRecord::Schema.define(version: 2021_03_28_111849) do
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "time"
+    t.string "duration"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "invites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status", default: "Pending"
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
+    t.integer "event_id"
+    t.index ["recipient_id"], name: "index_invites_on_recipient_id"
+    t.index ["sender_id"], name: "index_invites_on_sender_id"
+  end
+
+  create_table "user_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -20,4 +50,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_100713) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "invites", "users", column: "recipient_id"
+  add_foreign_key "invites", "users", column: "sender_id"
 end
