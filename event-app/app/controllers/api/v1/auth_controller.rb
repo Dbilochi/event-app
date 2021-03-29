@@ -3,9 +3,9 @@ class Api::V1::AuthController < ApplicationController
 
   def authorize_request
     begin
-      current_user
-    rescue ActiveRecord::RecordNotFound => e
-      render json: { errors: e.message }, status: :unauthorized
+      if current_user == nil
+        render json: { errors: 'unauthorized' }, status: :unauthorized
+      end
     rescue JWT::DecodeError => e
       render json: { errors: e.message }, status: :unauthorized
     end
@@ -37,6 +37,6 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def http_auth_header
-    return headers['Authorization'].split(' ').last if headers['Authorization'].present?
+    return request.headers['Authorization'].split(' ').last if request.headers['Authorization'].present?
   end
 end
