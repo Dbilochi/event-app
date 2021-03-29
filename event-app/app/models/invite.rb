@@ -8,6 +8,7 @@ class Invite < ApplicationRecord
   def as_json(options = {})
     super(
       only: [
+        :id,
         :email,
         :status
       ]

@@ -1,5 +1,5 @@
 class Api::V1::EventsController < Api::V1::AuthController
-  before_action :set_user
+  before_action :set_user, except: [:update_invitations]
 
   def user_events
     if @user
@@ -11,10 +11,19 @@ class Api::V1::EventsController < Api::V1::AuthController
 
   def user_invitations
     if @user
-      p '@user.invitations.not_accepted.as_json--', @user.invitations.not_accepted
-      render json: { data: @user.invitations.not_accepted.as_json }, status: :ok
+      render json: { data: @user.invitations.as_json }, status: :ok
     else
       render json: { errors: 'User not found' }, status: :not_found
+    end
+  end
+
+  def update_invitations
+    @invite = Invite.find_by(id: params[:id])
+    if @invite
+      @invite.update(status: params[:status])
+      render json: { data: @user.invitations.as_json }, status: :ok
+    else
+      render json: { errors: 'Invite not found' }, status: :not_found
     end
   end
 
