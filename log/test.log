@@ -1,0 +1,116 @@
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (22.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `event_app_test`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE DATABASE `event_app_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20210328100713)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2021-03-28 10:44:49.470503', '2021-03-28 10:44:49.470503')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '861fa208fffe5a5b2a943d3f17d4c88dcad588b1', '2021-03-28 10:44:49.474309', '2021-03-28 10:44:49.474309')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$oHs3sdJD/H7XWjb4p7iZbuWIb3s8mo7DNLNcWuomWJwccDA8l6txq', '2021-03-28 10:45:10.427831', '2021-03-28 10:45:10.427831')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`id` != 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$re/uDPJJIdXx2vHxocA7QOOJRA.QuR8k0InL4ipLhYgzZ3o42ml3G', '2021-03-28 10:45:10.483664', '2021-03-28 10:45:10.483664')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' AND `users`.`id` != 2 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$O0/L5vtdaxM/aQ4nZkCbMuLL1lXhXjpeCbAdoW3wlR6OwEay09P7K', '2021-03-28 10:45:51.787754', '2021-03-28 10:45:51.787754')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`id` != 3 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$.7qJmQTRFZymZ.eWiK5bIewntRKMb.IJDOX3eqOlrw6gI7/rvJVru', '2021-03-28 10:45:51.801372', '2021-03-28 10:45:51.801372')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' AND `users`.`id` != 4 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$Wlj4T6/HUkd5vQYwh0RKkeuGfBJk1UGItfXrrueGLvg27eaBb4HcO', '2021-03-28 10:45:51.805732', '2021-03-28 10:45:51.805732')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$SOc3K/PAFqG2q.iq7sYjgOn/KLKfJBAmQD3fcPXD43F1gx2smeyJ.', '2021-03-28 10:46:03.907349', '2021-03-28 10:46:03.907349')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`id` != 6 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$tPdN/AVDLf/zADOQPbue5.TptzbHw/HG6uth/L78MuAil3z.vzjO2', '2021-03-28 10:46:03.919851', '2021-03-28 10:46:03.919851')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' AND `users`.`id` != 7 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$TcLXTNs1uqCnc9y3kbZQF.tZrVPc6n.C0fbqtYYZ3RFpO2HL3I7Nq', '2021-03-28 10:46:03.925366', '2021-03-28 10:46:03.925366')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'abc.com' AND `users`.`id` != 8 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$PqOCp9eLmzIVzPGF2Wmi2Oz6u.3UomM/vNAzwMX/bcEfUuO77ChxW', '2021-03-28 10:46:17.319372', '2021-03-28 10:46:17.319372')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`id` != 9 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$8h7QuM3AXAzXY15N6tv86.MSwz0H/MAjFduYZrfdInID3DXNZ3WEK', '2021-03-28 10:46:17.332344', '2021-03-28 10:46:17.332344')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' AND `users`.`id` != 10 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@123.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('testUser', 'test@123.com', '$2a$04$c4rEsCsYhPvyF7738W7J3uSY59vpgnltYpVuH4xph4KemK74u6FhO', '2021-03-28 10:46:17.336411', '2021-03-28 10:46:17.336411')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'abc@com' AND `users`.`id` != 11 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
