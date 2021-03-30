@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_03_29_145650) do
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "time"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_145650) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "invites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "invites", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_145650) do
     t.index ["sender_id"], name: "index_invites_on_sender_id"
   end
 
-  create_table "user_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_events", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "event_id"
     t.datetime "created_at", precision: 6, null: false
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_145650) do
     t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"

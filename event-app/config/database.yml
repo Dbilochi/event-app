@@ -5,11 +5,11 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: root
-  password: 12345678
+  username: Duser
+  password: <%= ENV['EVENT_APP_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
