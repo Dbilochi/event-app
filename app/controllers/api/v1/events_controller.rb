@@ -34,12 +34,10 @@ class Api::V1::EventsController < Api::V1::AuthController
     render json: @events
   end
 
-  # GET /company_events/1
   def show
     render json: @event
   end
 
-  # POST /company_events
   def create
     @event = Event.new(event_params)
 
@@ -50,7 +48,6 @@ class Api::V1::EventsController < Api::V1::AuthController
     end
   end
 
-  # PATCH/PUT /company_events/1
   def update
     if @event.update(event_params)
       render json: @event
@@ -59,19 +56,16 @@ class Api::V1::EventsController < Api::V1::AuthController
     end
   end
 
-  # DELETE /company_events/1
   def destroy
     @event.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def event_params
     params.require(:event).permit(:name, :description, :time, :duration)
   end
